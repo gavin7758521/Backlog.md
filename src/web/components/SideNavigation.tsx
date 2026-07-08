@@ -163,7 +163,7 @@ const Icons = {
 };
 
 // Shared render path for sidebar document links (search results, folder tree, and flat list).
-const DocLink = ({ doc, depth = 0 }: { doc: Document; depth?: number }) => (
+const DocLink = ({ doc }: { doc: Document }) => (
 	<NavLink
 		to={`/documentation/${stripIdPrefix(doc.id)}/${sanitizeUrlTitle(doc.title)}`}
 		className={({ isActive }) =>
@@ -173,7 +173,6 @@ const DocLink = ({ doc, depth = 0 }: { doc: Document; depth?: number }) => (
 					: 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'
 			}`
 		}
-		style={depth > 0 ? { paddingLeft: `${12 + depth * 12}px` } : undefined}
 	>
 		<span className="text-gray-400 dark:text-gray-500"><Icons.DocumentPage /></span>
 		<span className="truncate">{doc.title}</span>
@@ -182,12 +181,11 @@ const DocLink = ({ doc, depth = 0 }: { doc: Document; depth?: number }) => (
 
 interface FolderNodeProps {
 	node: DocsTreeNode;
-	depth: number;
 	folderExpanded: Record<string, boolean>;
 	onToggleFolder: (path: string) => void;
 }
 
-const FolderNode = memo(function FolderNode({ node, depth, folderExpanded, onToggleFolder }: FolderNodeProps) {
+const FolderNode = memo(function FolderNode({ node, folderExpanded, onToggleFolder }: FolderNodeProps) {
 	const isExpanded = folderExpanded[node.path] ?? true;
 
 	return (
@@ -197,26 +195,28 @@ const FolderNode = memo(function FolderNode({ node, depth, folderExpanded, onTog
 				aria-label={`${node.name} folder`}
 				aria-expanded={isExpanded}
 				title={node.name}
-				className="flex items-center px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200 w-full"
-				style={{ paddingLeft: `${12 + depth * 12}px` }}
+				className="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-200 bg-gray-100/70 dark:bg-gray-800/70 hover:bg-gray-200/70 dark:hover:bg-gray-700/70 rounded-lg transition-colors duration-200 w-full"
 			>
 				<span className="shrink-0">{isExpanded ? <Icons.ChevronDown /> : <Icons.ChevronRight />}</span>
 				<span className="text-gray-500 dark:text-gray-400 ml-1 shrink-0"><Icons.Folder /></span>
 				<span className="ml-2 font-medium truncate">{node.name}</span>
 			</button>
 			{isExpanded && (
-				<div>
+				<div
+					role="group"
+					aria-label={`${node.name} contents`}
+					className="mt-1 ml-4 border-l border-gray-200 dark:border-gray-700 pl-2 space-y-1"
+				>
 					{node.children.map(child => (
 						<FolderNode
 							key={child.path}
 							node={child}
-							depth={depth + 1}
 							folderExpanded={folderExpanded}
 							onToggleFolder={onToggleFolder}
 						/>
 					))}
 					{node.docs.map(doc => (
-						<DocLink key={doc.id} doc={doc} depth={depth + 1} />
+						<DocLink key={doc.id} doc={doc} />
 					))}
 				</div>
 			)}
@@ -711,7 +711,6 @@ const SideNavigation = memo(function SideNavigation({
 												<FolderNode
 													key={node.path}
 													node={node}
-													depth={0}
 													folderExpanded={folderExpanded}
 													onToggleFolder={toggleFolder}
 												/>

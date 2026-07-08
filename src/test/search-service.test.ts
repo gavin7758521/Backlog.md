@@ -74,7 +74,7 @@ describe("SearchService", () => {
 
 	it("indexes tasks, documents, and decisions and returns combined results", async () => {
 		await filesystem.saveTask(baseTask);
-		await filesystem.saveDocument(baseDoc);
+		await filesystem.saveDocument(baseDoc, "guides");
 		await filesystem.saveDecision(baseDecision);
 
 		await search.ensureInitialized();
@@ -89,6 +89,7 @@ describe("SearchService", () => {
 
 		const docResult = results.find(isDocumentResult);
 		expect(docResult?.document.id).toBe("doc-1");
+		expect(docResult?.document.path).toBe("guides/doc-1 - Search-Architecture.md");
 		const decisionResult = results.find(isDecisionResult);
 		expect(decisionResult?.decision.id).toBe("decision-1");
 	});
