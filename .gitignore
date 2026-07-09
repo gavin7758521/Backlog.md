@@ -50,6 +50,12 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # Gemini CLI session data
 .gemini
 
+# Playwright MCP session data
+.playwright-mcp/
+
+# Local Codex handoff notes
+CODEX-*-HANDOFF.md
+
 # Example project folder
 example-project/
 
