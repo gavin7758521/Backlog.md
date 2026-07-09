@@ -40,7 +40,7 @@ If you can simplify the code, do it.
 
 ## Core Structure
 
-- **CLI Tool**: Built with Bun and TypeScript as a global npm package (`npm i -g backlog.md`)
+- **CLI Tool**: Built with Bun and TypeScript as a global npm package (`npm i -g @gavin7758521/backlog.md`)
 - **Source Code**: Located in `/src` directory with modular TypeScript structure
 - **Task Management**: Uses markdown files in `backlog/` directory structure
 - **Workflow**: Git-integrated with task IDs referenced in commits and PRs

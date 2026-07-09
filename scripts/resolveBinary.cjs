@@ -1,7 +1,9 @@
 const { execFileSync } = require("node:child_process");
 
+const PACKAGE_SCOPE = "@gavin7758521";
+
 function getPackageName(platform = process.platform, arch = process.arch) {
-	return `backlog.md-${platform === "win32" ? "windows" : platform}-${arch}`;
+	return `${PACKAGE_SCOPE}/backlog.md-${platform === "win32" ? "windows" : platform}-${arch}`;
 }
 
 /**

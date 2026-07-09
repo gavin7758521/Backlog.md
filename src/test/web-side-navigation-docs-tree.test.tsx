@@ -17,6 +17,9 @@ const createDocument = (overrides: Partial<BacklogDocument>): BacklogDocument =>
 
 let activeRoot: Root | null = null;
 const originalFetch = globalThis.fetch;
+const originalCustomEvent = globalThis.CustomEvent;
+const originalEvent = globalThis.Event;
+const originalMutationObserver = globalThis.MutationObserver;
 
 const setupDom = () => {
 	const dom = new JSDOM("<!doctype html><html><body><div id='root'></div></body></html>", { url: "http://localhost" });
@@ -25,11 +28,14 @@ const setupDom = () => {
 	globalThis.document = dom.window.document as unknown as Document;
 	globalThis.navigator = dom.window.navigator as unknown as Navigator;
 	globalThis.localStorage = dom.window.localStorage as unknown as Storage;
+	globalThis.CustomEvent = dom.window.CustomEvent as unknown as typeof CustomEvent;
+	globalThis.Event = dom.window.Event as unknown as typeof Event;
+	globalThis.MutationObserver = dom.window.MutationObserver as unknown as typeof MutationObserver;
 	globalThis.fetch = (async () =>
 		({
 			ok: true,
 			json: async () => ({ version: "test" }),
-		}) as Response) as typeof fetch;
+		}) as Response) as unknown as typeof fetch;
 };
 
 const renderSideNavigation = (docs: BacklogDocument[]): HTMLElement => {
@@ -55,6 +61,9 @@ const renderSideNavigation = (docs: BacklogDocument[]): HTMLElement => {
 
 afterEach(() => {
 	globalThis.fetch = originalFetch;
+	globalThis.CustomEvent = originalCustomEvent;
+	globalThis.Event = originalEvent;
+	globalThis.MutationObserver = originalMutationObserver;
 	if (activeRoot) {
 		act(() => {
 			activeRoot?.unmount();

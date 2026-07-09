@@ -90,17 +90,21 @@
               Backlog.md is a command-line tool for managing tasks and projects using markdown files.
               It provides Kanban board visualization, task management, and integrates with Git workflows.
             '';
-            homepage = "https://backlog.md";
-            changelog = "https://github.com/MrLesk/Backlog.md/releases";
+            homepage = "https://github.com/gavin7758521/Backlog.md";
+            changelog = "https://github.com/gavin7758521/Backlog.md/releases";
             license = licenses.mit;
             maintainers = let
+              gavin7758521 = {
+                name = "gavin7758521";
+                github = "gavin7758521";
+              };
               mrlesk = {
                 name = "MrLesk";
                 github = "MrLesk";
                 githubId = 181345848;
               };
             in
-              with maintainers; [ anpryl mrlesk ];
+              with maintainers; [ gavin7758521 anpryl mrlesk ];
             platforms = platforms.all;
             mainProgram = "backlog";
           };

@@ -7,14 +7,14 @@
 <p align="center">AI agents write the code. You review the tasks: before, during, and after.</p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/backlog.md"><img src="https://img.shields.io/npm/v/backlog.md?color=brightgreen" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/backlog.md"><img src="https://img.shields.io/npm/dm/backlog.md" alt="npm downloads"></a>
-  <a href="https://github.com/MrLesk/Backlog.md/blob/main/LICENSE"><img src="https://img.shields.io/github/license/MrLesk/Backlog.md" alt="MIT license"></a>
-  <a href="https://github.com/MrLesk/Backlog.md"><img src="https://img.shields.io/github/stars/MrLesk/Backlog.md?style=social" alt="GitHub stars"></a>
+  <a href="https://www.npmjs.com/package/@gavin7758521/backlog.md"><img src="https://img.shields.io/npm/v/@gavin7758521/backlog.md?color=brightgreen" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@gavin7758521/backlog.md"><img src="https://img.shields.io/npm/dm/@gavin7758521/backlog.md" alt="npm downloads"></a>
+  <a href="https://github.com/gavin7758521/Backlog.md/blob/main/LICENSE"><img src="https://img.shields.io/github/license/gavin7758521/Backlog.md" alt="MIT license"></a>
+  <a href="https://github.com/gavin7758521/Backlog.md"><img src="https://img.shields.io/github/stars/gavin7758521/Backlog.md?style=social" alt="GitHub stars"></a>
 </p>
 
 <p align="center">
-<code>npm i -g backlog.md</code>
+<code>npm i -g @gavin7758521/backlog.md</code>
 </p>
 
 ![Backlog demo GIF using: backlog board](./.github/backlog-v1.40.gif)
@@ -24,6 +24,9 @@
 
 > **Backlog.md** turns any folder into a **self‑contained project board**
 > powered by plain Markdown files and a zero‑config CLI.
+
+This repository is an independent MIT-licensed fork of Backlog.md, published under the
+`@gavin7758521` npm scope while preserving upstream attribution.
 
 ## Why Backlog.md in the AI era
 
@@ -77,10 +80,10 @@ Backlog.md itself. The full task ledger lives in this repo's [backlog folder](ba
 
 ```bash
 # Install
-npm i -g backlog.md
-# or: bun add -g backlog.md
+npm i -g @gavin7758521/backlog.md
+# or: bun add -g @gavin7758521/backlog.md
 # or: brew install backlog-md
-# or: nix run github:MrLesk/Backlog.md
+# or: nix run github:gavin7758521/Backlog.md
 
 # Initialize in any Git repo
 backlog init "My Awesome Project"
@@ -90,9 +93,9 @@ backlog init "Personal Planning" --no-git
 ```
 
 > [!TIP]
-> **Running one-off with `npx`?** This tool's npm package is named `backlog.md`, so use the full name: `npx backlog.md init "My Project"`, `npx backlog.md board`.
+> **Running one-off with `npx`?** This fork's npm package is named `@gavin7758521/backlog.md`, so use the full name: `npx @gavin7758521/backlog.md init "My Project"`, `npx @gavin7758521/backlog.md board`.
 > Without an install, `npx backlog` resolves to an unrelated third-party npm package — not this tool.
-> (With `backlog.md` installed as a project dependency, `npx backlog` runs the local binary as usual.)
+> (With `@gavin7758521/backlog.md` installed as a project dependency, `npx backlog` runs the local binary as usual.)
 
 The init wizard will ask how you want to connect AI tools:
 - **CLI instructions** (recommended): creates a short instruction file that tells agents to run `backlog instructions overview`.
@@ -335,13 +338,13 @@ If the architectures disagree, reinstall with the native one:
 brew reinstall backlog-md
 
 # npm
-arch -arm64 npm i -g backlog.md
+arch -arm64 npm i -g @gavin7758521/backlog.md
 
 # Bun
-arch -arm64 bun add -g backlog.md
+arch -arm64 bun add -g @gavin7758521/backlog.md
 ```
 
-Running an x64 Node under Rosetta on purpose also works: `backlog` falls back to whichever `backlog.md-darwin-*` package is present.
+Running an x64 Node under Rosetta on purpose also works: `backlog` falls back to whichever `@gavin7758521/backlog.md-darwin-*` package is present.
 
 ---
 
@@ -361,4 +364,4 @@ Watch Backlog.md in action:
 
 ## License
 
-Backlog.md is released under the **MIT License**: do anything, just give credit. See [LICENSE](LICENSE).
+Backlog.md is released under the **MIT License**: do anything, just give credit. This fork preserves the upstream copyright notice and adds fork maintainer attribution in [LICENSE](LICENSE).

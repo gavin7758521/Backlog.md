@@ -931,7 +931,7 @@ addHelpSchema(program.command("init [projectName]"), {
 				let agentFiles: AgentInstructionFile[] = [];
 				let agentInstructionsSkipped = false;
 				let mcpClientSetupSummary: string | undefined;
-				const mcpGuideUrl = "https://github.com/MrLesk/Backlog.md#-mcp-integration-model-context-protocol";
+				const mcpGuideUrl = "https://github.com/gavin7758521/Backlog.md#-mcp-integration-model-context-protocol";
 
 				if (
 					!integrationOption &&

@@ -1098,42 +1098,6 @@
     url = "https://registry.npmjs.org/await-to-js/-/await-to-js-3.0.0.tgz";
     hash = "sha512-zJAaP9zxTcvTHRlejau3ZOY4V7SRpiByf3/dxx2uyKxxor19tpmpV2QRsTKikckwhaPmr2dVpxxMr7jOCYVp5g==";
   };
-  "backlog.md-darwin-arm64" = {
-    out_path = "backlog.md-darwin-arm64";
-    name = "backlog.md-darwin-arm64@1.14.4";
-    url = "https://registry.npmjs.org/backlog.md-darwin-arm64/-/backlog.md-darwin-arm64-1.14.4.tgz";
-    hash = "sha512-f6AcF+CZpw7BrRJlIhD1PuNWNYUrMRlAaP7v4sr/xwespAqWBc2xT0MS0ba2ory9cEFup16W2K5H789i1mBQ2Q==";
-  };
-  "backlog.md-darwin-x64" = {
-    out_path = "backlog.md-darwin-x64";
-    name = "backlog.md-darwin-x64@1.14.4";
-    url = "https://registry.npmjs.org/backlog.md-darwin-x64/-/backlog.md-darwin-x64-1.14.4.tgz";
-    hash = "sha512-DDuT04LqZgTWDJD42wl9Bw/gJACfsAuI1ZPZvqMSh9PtjySC25iCKmjflsgrkgRvGI49Cx7dCONTVfvILZZCTg==";
-  };
-  "backlog.md-linux-arm64" = {
-    out_path = "backlog.md-linux-arm64";
-    name = "backlog.md-linux-arm64@1.14.4";
-    url = "https://registry.npmjs.org/backlog.md-linux-arm64/-/backlog.md-linux-arm64-1.14.4.tgz";
-    hash = "sha512-efMv+NVoC5MkRfHg6rvSEw+MAjMF6w+FUjLtMuOtAR4vdL8sVUNqHgi9zsjQ6glnnz9/JBFtnYjjkRCozZuYuw==";
-  };
-  "backlog.md-linux-x64" = {
-    out_path = "backlog.md-linux-x64";
-    name = "backlog.md-linux-x64@1.14.4";
-    url = "https://registry.npmjs.org/backlog.md-linux-x64/-/backlog.md-linux-x64-1.14.4.tgz";
-    hash = "sha512-h3RT7jMqFZqQ/Sf49oB7ggqGJ2+p53nIqW544Ue+6RLL7VOmXieLU+hQlG5sh1rACbg22Y5gOhpvdnVvNgfiMA==";
-  };
-  "backlog.md-windows-arm64" = {
-    out_path = "backlog.md-windows-arm64";
-    name = "backlog.md-windows-arm64@1.45.1";
-    url = "https://registry.npmjs.org/backlog.md-windows-arm64/-/backlog.md-windows-arm64-1.45.1.tgz";
-    hash = "sha512-LCotlXCwS5b+K3aYeeoIP78jYT3Af9NKOcvLZ9B8J/74MwWWOv3qM5CWwXqxSw2Rat62TtdvAkQfS7pQHyny2w==";
-  };
-  "backlog.md-windows-x64" = {
-    out_path = "backlog.md-windows-x64";
-    name = "backlog.md-windows-x64@1.14.4";
-    url = "https://registry.npmjs.org/backlog.md-windows-x64/-/backlog.md-windows-x64-1.14.4.tgz";
-    hash = "sha512-8gpi4GVY7wW6Ci8tXfHuodoXFPY4I2hsmOFMK7ggmhhImThALoaw2MTPoJbbFAXS0x5t9lL0R5toufZcmcJwyA==";
-  };
   "bail" = {
     out_path = "bail";
     name = "bail@2.0.2";
